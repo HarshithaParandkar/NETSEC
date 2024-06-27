@@ -1,0 +1,94 @@
+<main class="container">
+  <header class="header">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/main.css') }}" />
+    <h1 class="logo">NETSEC</h1>
+    <nav class="nav">
+      <a href="" class="nav-link">Features</a>
+      <div class="nav-actions">
+        <a href="#" class="nav-contact">Contact</a>
+        <a href="{{ url_for('login') }}" class="nav-login">Login</a>
+      </div>
+    </nav>
+  </header>
+  
+  <h2 class="hero-title">
+    <span style="font-family: Libre Franklin, -apple-system, Roboto, Helvetica, sans-serif; font-weight: 700;">
+      Unlock the power of your network
+    </span>
+  </h2>
+  
+  <p class="hero-subtitle">
+    Our network analyzer tool provides deep insights into your network traffic, helping you optimize <br>performance and identify issues.
+  </p>
+  
+  <a href="#" class="cta-button">Try it now</a>
+  <main class="empty-state" aria-label="Empty state">
+
+  <section class="features">
+    <h2 class="features-title">Key features</h2>
+    <p class="features-subtitle">
+      Our network analyzer tool offers powerful features to help you optimize your network.
+    </p>
+    
+    <div class="features-grid">
+      <div class="features-row">
+        <div class="feature-col">
+          <div class="feature-card1">
+            <div class="feature-header">
+              <img src="{{ url_for('static', filename='dashboard (3).png') }}" class="feature-icon">
+              <h3 class="feature-name">NetBlaze</h3>
+            </div>
+            <p class="feature-description">
+              Instantly gauge your internet download and upload speeds.
+            </p>
+          </div>
+        </div>
+        
+        <div class="feature-col-alt">
+          <div class="feature-card-alt">
+            <div class="feature-header">
+              <img src="{{ url_for('static',filename='scan.png') }}" class="feature-icon-alt">
+              <h3 class="feature-name-alt">NetScan</h3>
+            </div>
+            <p class="feature-description-alt">
+              A tool for capturing and analyzing network traffic data in real-time
+            </p>
+          </div>
+        </div>
+        
+        <div class="feature-col-alt">
+          <div class="feature-card  ">
+            <div class="feature-header">
+              <img src="{{ url_for('static',filename='pie-chart.png') }}" class="feature-icon">
+              <h3 class="feature-name">NetTrack</h3>
+            </div>
+            <p class="feature-description">
+              Monitor and track your internet consumption to manage usage efficiently.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</main>
+
+<br><br>
+<footer class="footer">
+  <div class="footer-contact">
+    <img src="{{ url_for('static',filename='email (2).png') }}" alt="" class="footer-icon">
+    <img src="{{ url_for('static',filename='instagram (2).png') }}" alt="" class="footer-icon">
+    <img src="{{ url_for('static',filename='whatsapp (2).png') }}" alt="" class="footer-icon">
+    <p class="footer-text">
+      Need assistance or have questions? Contact us for prompt support and guidance.
+    </p>
+  </div>
+ 
+  <div class="footer-bottom">
+    <p class="footer-copyright">@2024 . All rights reserved to @TeamNetSec</p>
+    <div class="footer-links">
+      <!--<a href="#" class="footer-link-privacy">Privacy</a>
+      <a href="#" class="footer-link-t">Terms & Conditions</a>-->
+    </div>
+  </div>
+</footer>

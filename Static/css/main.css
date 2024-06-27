@@ -1,0 +1,621 @@
+.container {
+
+  background-color: #fff;
+
+  display: flex;
+
+  padding: 60px 0 0;
+
+  flex-direction: column;
+
+  align-items: center;
+
+ width: 100%;
+
+}
+
+
+.header {
+
+  display: flex;
+
+  margin-top: 0px;
+
+  width: 100%;
+
+  max-width: 1258px;
+
+  gap: 20px;
+
+  padding: 0 20px;
+  margin-bottom: 20px;
+
+}
+
+
+
+
+
+
+.logo {
+
+  color: #000;
+
+  text-decoration: underline;
+
+  flex: 1 1 auto;
+
+  font: 28px Mallanna, sans-serif;
+
+  display: flex;
+  margin-left: 15px;
+
+  align-items: center;
+
+}
+
+
+.logo-name {
+
+  color: #000; /* Color of the logo name */
+
+  font-size: 24px; /* Adjust font size as needed */
+
+  font-weight: bold; /* Adjust font weight as needed */
+
+}
+
+
+.logo-underline {
+
+  width: 100%; /* Adjust width of the underline */
+
+  height: 2px; /* Adjust height of the underline */
+
+  background-color: #000; /* Color of the underline */
+
+  margin-left: 10px; /* Adjust spacing between name and underline */
+
+}
+
+
+
+
+
+
+.nav {
+
+  align-self: start;
+
+  margin-left: 40px;
+
+  margin-right: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 60px;
+
+  font-size: 17px;
+
+  justify-content: space-between;
+
+}
+
+
+.nav-link {
+
+  color: rgba(0, 0, 0, 0.64);
+
+  margin-left: 20px;
+
+  margin-right: 20px;
+
+  font-family: Libre Franklin, sans-serif;
+
+  font-weight: 600;
+
+  mix-blend-mode: darken;
+
+  align-self: stretch;
+
+  margin: auto 0;
+
+}
+
+
+a{
+
+    text-decoration: none;
+
+}
+
+
+.nav-link-alt {
+
+    color: rgba(0, 0, 0, 0.64);
+
+  margin-left: 20px;
+
+  font-family: Libre Franklin, sans-serif;
+
+  font-weight: 600;
+
+  mix-blend-mode: darken;
+
+  align-self: stretch;
+
+  margin: auto 0;
+
+}
+
+
+.nav-actions {
+
+  align-self: stretch;
+
+  display: flex;
+
+  gap: 30px;
+
+  white-space: nowrap;
+
+  justify-content: space-between;
+
+}
+
+
+
+
+.nav-contact {
+
+    color: rgba(0, 0, 0, 0.64);
+
+    margin-left: 20px;
+
+    margin-right: 20px;
+
+    font-family: Libre Franklin, sans-serif;
+
+    font-weight: 600;
+
+    mix-blend-mode: darken;
+
+    align-self: stretch;
+
+    margin: auto 0;
+
+}
+
+
+.nav-login {
+
+  font-family: Libre Franklin, sans-serif;
+
+  border-radius: 34px;
+
+  margin-left: 10px;
+
+  margin-right: 20px;
+
+  background-color: #18cef6;
+
+  color: #fff;
+
+  font-weight: 700;
+
+  justify-content: center;
+
+  padding: 10px;
+
+}
+
+
+
+
+
+
+.hero-title {
+
+  color: #000;
+
+  text-align: center;
+
+  margin-top: 50px;
+
+  margin-bottom: 14px;
+
+  font: 370 60px Inter, sans-serif;
+
+}
+
+
+
+
+.hero-subtitle {
+
+  color: #5b5a5a;
+
+  text-align: center;
+
+  margin-top: 0px;
+
+  margin-bottom: 50px;
+
+  font: 400 22px Libre Franklin, sans-serif;
+
+}
+
+
+
+
+.cta-button {
+
+  border-radius: 35px;
+
+  background-color: #141414;
+
+  margin-top: 0px;
+
+  margin-bottom: 130px;
+
+  width: 120px;
+
+  max-width: 100%;
+
+  align-items: center;
+
+  color: #fff;
+
+  text-align: center;
+
+  justify-content: center;
+
+  padding: 26px 60px;
+
+  font: 500 27px Libre Franklin, sans-serif;
+
+}
+
+
+
+
+.features {
+
+  align-self: stretch;
+
+  display: flex;
+
+  margin-top:0px;
+
+  width: 100%;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+.features-title {
+
+  color: #000;
+
+  text-align: center;
+
+  font: 700 45px inter, sans-serif;
+
+  margin-bottom: 12px;
+
+}
+
+
+.features-subtitle {
+
+  color: #464343;
+
+  text-align: center;
+
+  margin-top: 0px;
+
+  font: 400 24px Libre Franklin, sans-serif;
+
+}
+
+
+.features-grid {
+
+  align-self: stretch;
+
+  z-index: 10;
+
+  margin: 40px 0 29px;
+
+}
+
+
+.features-row {
+
+  gap: 20px;
+
+  display: flex;
+
+}
+
+
+.feature-col,
+
+.feature-col-alt {
+
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: normal;
+
+  width: 30%;
+
+  margin-left: 0px;
+
+}
+
+
+.feature-card1,
+
+.feature-card,
+
+.feature-card-alt {
+
+  border-radius: 31px;
+
+  background-color: #fff;
+
+  display: flex;
+
+  height: 180px;
+
+  width: 350px;
+
+  flex-direction: column;
+
+  font-weight: 400;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 38px;
+  padding-top: 15px;
+
+}
+
+
+.feature-header,
+
+.feature-header-alt {
+
+  align-self: start;
+
+  display: flex;
+
+  margin-left: 13px;
+
+  gap: 20px;
+
+  font-size: 25px;
+
+  color: #000;
+
+  white-space: nowrap;
+
+  text-align: center;
+
+  margin-top: 10px;
+
+}
+
+
+.feature-icon,
+
+.feature-icon-alt {
+
+  aspect-ratio: 0.98;
+
+  object-fit: auto;
+
+  object-position: center;
+
+  width: 41px;
+
+  mix-blend-mode: darken;
+
+}
+
+
+.feature-name,
+
+.feature-name-alt {
+
+  font-family: Libre Franklin, sans-serif;
+
+  flex: 1 1 1;
+
+  margin: auto 0;
+
+}
+
+
+.feature-description,
+
+.feature-description-alt {
+
+  color: #494848;
+
+  margin-top: 16px;
+
+  font: 20px Libre Franklin, sans-serif;
+
+  margin-left: 15px;
+
+}
+
+
+
+
+.footer {
+
+  background-color: #fbbc05;
+
+  align-self: stretch;
+
+  display: flex;
+
+  margin-top: 20px;
+  
+  height: 55px;
+
+  flex-direction: column;
+
+  padding: 10px 50px;
+
+
+}
+
+
+
+
+.footer-contact {
+
+  display: flex;
+
+  align-items: start;
+
+  gap: 20px;
+
+  font-size: 24px;
+
+  color: #1b1818;
+
+  font-weight: 400;
+
+}
+
+
+.footer-icon {
+
+  aspect-ratio: 1;
+
+  object-fit: auto;
+
+  object-position: center;
+
+  width: 31px;
+
+margin-top: 5px;
+
+  height: 31px;
+}
+
+
+.footer-text {
+
+  font-family: Libre Franklin, sans-serif;
+
+  align-self: stretch;
+
+  font-size: 17px;
+
+  flex: 1 1 auto;
+
+  margin-bottom: 0px;
+
+}
+
+
+
+
+.footer-bottom {
+
+  display: flex;
+
+  margin-bottom: 30px;
+
+  width: 100%;
+
+  font-size: 15px;
+
+  color: #000;
+
+  font-weight: 300;
+
+  text-align: center;
+
+  
+
+}
+
+
+
+
+.footer-copyright {
+
+  font-family: Libre Franklin, sans-serif;
+ font-size: 10px;
+  
+
+}
+
+
+.footer-links {
+
+  align-self: start;
+
+  display: flex;
+
+  margin-top: 7px;
+
+  gap: 20px;
+
+}
+
+
+.footer-link-privacy{
+
+  font-family: Libre Franklin, sans-serif;
+
+margin-top: 00px;
+
+margin-left: 600px;
+
+}
+
+.footer-link-t{
+
+    font-family: Libre Franklin, sans-serif;
+
+    margin-right: 23px;
+
+    margin-top: 0px;
+
+}
+
+
+
+
+.empty-state {
+
+width: 100%;
+
+min-height: 425px;
+
+display: flex;
+
+justify-content: center;
+
+margin-top: 0px;
+
+align-items: center;
+
+background: rgb(255,255,255);
+
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(142, 233, 252) 100%);
+
+}

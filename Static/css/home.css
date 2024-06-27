@@ -1,0 +1,172 @@
+.container {
+  background: linear-gradient(62deg, #fff 55.2%, #7fe8ff 128.65%);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  gap: 1vw; /* Reduced gap */
+}
+
+.sidebar {
+  background-color: #26d0f6;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 2vh 1vw; /* Reduced padding */
+}
+
+.sidebar-icon1 {
+  width: 2vw; /* Reduced width */
+  margin-top: 26vh; /* Reduced margin */
+}
+
+.sidebar-icon {
+  width: 1.8vw; /* Reduced width */
+  margin-top: 9vh; /* Reduced margin */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: fit-content;
+  margin: auto 0;
+  padding: 0 0.5vw; /* Reduced padding */
+}
+
+.logo {
+  color: #000;
+  text-decoration: underline;
+  font: 24px Mallanna, sans-serif; /* Reduced font size */
+  margin-top: 4vh; /* Reduced margin */
+}
+
+.a {
+  text-decoration: none;
+}
+
+.intro-title {
+  color: #000;
+  margin-top: 1.5vh; /* Reduced margin */
+  font: 4vw Epilogue, sans-serif; /* Reduced font size */
+  margin-bottom: 0;
+}
+
+.intro-subtitle {
+  color: #3d3d3d;
+  margin-top: 0;
+  font: 1.2vw Epilogue, sans-serif; /* Reduced font size */
+}
+
+.features {
+  margin-top: 1.5vh; /* Reduced margin */
+}
+
+.feature-row {
+  display: flex;
+  gap: 5vw; /* Reduced gap */
+}
+
+.feature-col {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 40%;
+  margin-left: 0;
+}
+
+.feature-card {
+  border-radius: 2vw; /* Reduced border radius */
+  background-color: #eefcff;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 480px; /* Reduced width */
+  padding: 2vh 2vw; /* Reduced padding */
+  margin-left: 35px;
+  margin-right: 1vw; /* Reduced margin */
+}
+
+.feature-header {
+  display: flex;
+  gap: 1vw; /* Reduced gap */
+  font-size: 1.8vw; /* Reduced font size */
+  color: #000;
+  font-weight: 700;
+}
+
+.feature-title {
+  font-family: Epilogue, sans-serif;
+  flex-grow: 1;
+  flex-basis: auto;
+}
+
+.feature-icon-2 {
+  width: 2vw; /* Reduced width */
+  padding-top: 2vh; /* Reduced padding */
+  padding-right: 3vw; /* Reduced padding */
+  align-self: start;
+}
+
+.feature-description {
+  color: #363636;
+  margin-top: 0px;
+  font: 400 1.4vw/1.8vw Epilogue, sans-serif; /* Reduced font size */
+}
+
+.feature-header-2 {
+  display: flex;
+  gap: 1vw; /* Reduced gap */
+  font-size: 1.8vw; /* Reduced font size */
+  color: #000;
+  font-weight: 700;
+}
+
+.a {
+  text-decoration: none;
+}
+
+.feature-card-3 {
+  border-radius: 2vw; /* Reduced border radius */
+  background-color: #eefcff;
+  margin-left: 7vw; /* Reduced margin */
+  display: flex;
+  margin-top: 15px; /* Reduced margin */
+  margin-bottom: 2vh; /* Reduced margin */
+  width: 60vw; /* Reduced width */
+  flex-direction: column;
+  font-weight: 700;
+  padding: 2vh 3vw; /* Reduced padding */
+  margin-right: 1vw; /* Reduced margin */
+}
+
+.feature-header-3 {
+  display: flex;
+  margin-right: 1vw; /* Reduced margin */
+  gap: 1vw; /* Reduced gap */
+  font-size: 1.8vw; /* Reduced font size */
+  color: #000;
+}
+
+.feature-title-3 {
+  font-family: Epilogue, sans-serif;
+  flex-grow: 1;
+  flex-basis: auto;
+}
+
+.feature-icon-3 {
+  width: 2vw; /* Reduced width */
+}
+
+.footer {
+  background-color: #fbbc05;
+  min-height: 2vh; /* Reduced height */
+  width: 100%;
+}

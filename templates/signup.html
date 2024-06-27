@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="signup-container">
+    <form class="signup-form" method="POST" action="{{ url_for('signup') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}" />
+        <h2 class="signup-title">Sign up</h2>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="" class="input-icon" />
+            <input type="text" name="username" id="username" placeholder="Username" class="label" required />
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='email (2).png') }}" alt="" class="email-icon" />
+            <input type="email" name="email" placeholder="Email" class="label" required />
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='padlock.png') }}" alt="" class="input-icon" />
+            <input type="password" name="password" placeholder="Password"class="label" required />
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='clipboard.png') }}" alt="" class="input-icon1" />
+            <textarea name="bio" placeholder="Bio"class="label"></textarea>
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='phone.png') }}" alt="" class="input-icon" />
+            <input type="tel" name="phone" placeholder="Phone"class="label">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='address.png') }}" alt="" class="input-icon" />
+            <input type="text" name="address" placeholder="Address"class="label">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='age.png') }}" alt="" class="input-icon" />
+            <input type="number" name="age" placeholder="Age"class="label">
+        </div>
+        <button type="submit" class="create-button">Create</button>
+        <div class="login-link">
+            <span class="login-text">Already have an account?</span>
+            <a href="{{ url_for('login') }}" class="login-link-text">Login here</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

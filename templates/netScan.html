@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Packet Sniffer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { cursor: pointer; }
+        .lightpurple { background-color: #e0b3ff; }
+        .lightblue { background-color: #add8e6; }
+        .black { background-color: #000000; color: white; }
+        .lightgreen { background-color: #90ee90; }
+        .lightyellow { background-color: #ffffe0; }
+        .darkgray { background-color: #a9a9a9; }
+        .filter-container {
+            margin-bottom: 20px;
+        }
+        .filter-container input {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            var packets = [];
+
+            function renderTable() {
+                var table = document.getElementById('packetsTable');
+                var tbody = table.getElementsByTagName('tbody')[0];
+                tbody.innerHTML = ''; // Clear the table body
+
+                packets.forEach(function(data) {
+                    var row = tbody.insertRow();
+                    row.className = data.color;
+                    
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+                    var cell7 = row.insertCell(6);
+
+                    cell1.innerHTML = data.serial_number;
+                    cell2.innerHTML = data.timestamp;
+                    cell3.innerHTML = data.source;
+                    cell4.innerHTML = data.destination;
+                    cell5.innerHTML = data.protocol;
+                    cell6.innerHTML = data.length;
+                    cell7.innerHTML = data.info;
+                });
+            }
+
+            socket.on('new_packet', function(data) {
+                packets.push(data);
+                renderTable();
+            });
+
+            document.getElementById('filter').addEventListener('input', function() {
+                var filter = this.value.toLowerCase();
+                packets = packets.filter(function(data) {
+                    return data.source.toLowerCase().includes(filter) || 
+                           data.destination.toLowerCase().includes(filter) || 
+                           data.protocol.toLowerCase().includes(filter);
+                });
+                renderTable();
+            });
+
+            document.getElementById('sort').addEventListener('change', function() {
+                var sortKey = this.value;
+                packets.sort(function(a, b) {
+                    if (a[sortKey] < b[sortKey]) return -1;
+                    if (a[sortKey] > b[sortKey]) return 1;
+                    return 0;
+                });
+                renderTable();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="card">
+        <h1>Real-Time Packet Sniffer</h1>
+        <div class="filter-container">
+            <input type="text" id="filter" placeholder="Filter by IP, Protocol...">
+            <select id="sort">
+                <option value="serial_number">Sort by Serial</option>
+                <option value="timestamp">Sort by Timestamp</option>
+                <option value="source">Sort by Source</option>
+                <option value="destination">Sort by Destination</option>
+                <option value="protocol">Sort by Protocol</option>
+                <option value="length">Sort by Length</option>
+            </select>
+        </div>
+        <table id="packetsTable">
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>Timestamp</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Protocol</th>
+                    <th>Length</th>
+                    <th>Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Packet rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

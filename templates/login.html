@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="login-container">
+    <form class="login-form" method="POST" action="{{ url_for('login') }}">
+        <h1 class="login-title">Log in</h1>
+        <head><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css')}}" /></head>
+        <div class="input-wrapper">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="" class="input-icon" />
+            <input type="text" name="username" id="username" placeholder="Username" class="label" required />
+        </div>
+        <div class="password-wrapper">
+            <img src="{{ url_for('static', filename='padlock.png') }}" alt="" class="input-icon" />
+            <input type="password" name="password" id="password" placeholder="Password" class="label" required />
+        </div>
+        <a href="#" class="forgot-password">Forgot password?</a>
+        <button type="submit" class="login-button">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b6e457089eff0dfccc7ba09de9dd3dca271c55282ff16fba680c6068cd01c162?apiKey=94affbf9bb6c4362a4114122c85db874&" alt="Login" class="login-icon" />
+        </button>
+        <p class="signup-text">Or sign up using</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ddf0a023d23cce478a58fc55d16b77d1fa19b7b95b9271fe724df765b61257f?apiKey=94affbf9bb6c4362a4114122c85db874&" alt="Social login options" class="social-login" />
+        <p class="signup-link">
+            <span>Don't have an account?</span>
+            <a href="{{ url_for('signup') }}" class="bold">Sign Up</a>
+        </p>
+    </form>
+</main>
+{% endblock %}

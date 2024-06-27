@@ -1,0 +1,31 @@
+styles.css
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.chart-container {
+    width: 45%;
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+table {
+    width: 45%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}

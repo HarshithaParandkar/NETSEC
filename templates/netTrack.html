@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Data Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Network Data Dashboard</h1>
+
+        <div class="charts">
+            <canvas id="applicationsChart"></canvas>
+            <canvas id="receiversChart"></canvas>
+        </div>
+
+        <div class="tables">
+            <h2>Top Applications</h2>
+            <table id="applicationsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Bytes</th>
+                        <th>Packets</th>
+                        <th>Percent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in top_applications %}
+                    <tr>
+                        <td>{{ app.name }}</td>
+                        <td>{{ app.bytes }}</td>
+                        <td>{{ app.packets }}</td>
+                        <td>{{ app.percent|default(0) }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h2>Top Receivers</h2>
+            <table id="receiversTable">
+                <thead>
+                    <tr>
+                        <th>Hostname</th>
+                        <th>Bytes</th>
+                        <th>Packets</th>
+                        <th>Percent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for recv in top_receivers %}
+                    <tr>
+                        <td>{{ recv.hostname }}</td>
+                        <td>{{ recv.bytes }}</td>
+                        <td>{{ recv.packets }}</td>
+                        <td>{{ recv.percent|default(0) }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Test</title>
+    <link rel="stylesheet" href="path/to/your/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        canvas {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Internet Speed Test</h1>
+    <button onclick="runSpeedTest()">Start Test</button>
+    <div id="results" style="display: none;">
+        <p id="ping"></p>
+        <p id="download"></p>
+        <p id="upload"></p>
+        <canvas id="speedChart"></canvas>
+    </div>
+
+    <script>
+        async function runSpeedTest() {
+            document.getElementById('results').style.display = 'none';
+
+            const response = await fetch('/speedtest');
+            const data = await response.json();
+
+            document.getElementById('ping').innerText = `Ping: ${data.ping} ms`;
+            document.getElementById('download').innerText = `Download Speed: ${data.download_speed.toFixed(2)} Mbps`;
+            document.getElementById('upload').innerText = `Upload Speed: ${data.upload_speed.toFixed(2)} Mbps`;
+
+            const ctx = document.getElementById('speedChart').getContext('2d');
+            const speedChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Download Speed', 'Upload Speed'],
+                    datasets: [{
+                        label: 'Speed (Mbps)',
+                        data: [data.download_speed, data.upload_speed],
+                        backgroundColor: ['#42a5f5', '#66bb6a'],
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
